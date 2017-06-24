@@ -3,10 +3,16 @@ using namespace std;
 #define ll long long 
 ll p[10000], r[10000], N, Q, x, y, h[10000];
 char o;
+void makeSet(ll x){
+    r[x] = 0;
+    h[x] = 1;
+    p[x] = x;
+    return;
+}
 ll find(ll x){
 	if(x == p[x])
 		return x;
-	return (p[x] = find(p[x]));
+	return p[x] = find(p[x]);
 }
 ll sameSet(ll x, ll y){
 	return find(x) == find(y);
@@ -19,13 +25,10 @@ void join(ll x, ll y){
 		ll dx = find(x);
 		ll dy = find(y);
 		if(r[dx] > r[dy]){
-			// NOW representative of Y belongs TO X
 			p[dy] = dx;
-			// WE ADD THEM ALL the nodes from representative of Y to the Rep X.
 			h[dx] += h[dy];
 		}
 		else{
-			// the inverse of above.
 			p[dx] = dy;
 			h[dy] += h[dx];
 			if(r[dx] == r[dy])
@@ -36,8 +39,7 @@ void join(ll x, ll y){
 }
 int main(){
 	cin >> N;
-	for(int i = 0 ; i <= N; i++)
-		p[i] = i, r[i] = 0, h[i] = 1;
+	for(int i = 0 ; i <= N; i++) makeSet(i);
 	cin >> Q;
 	for(int i = 0; i < Q; i++){
 		cin >> o;
@@ -47,7 +49,7 @@ int main(){
 		}
 		if(o == 'F'){
 			cin >> x;
-			cout << find(x);
+			cout << find(x) << endl;
 		}
 		if(o == 'M'){
 			cout << N << endl;
