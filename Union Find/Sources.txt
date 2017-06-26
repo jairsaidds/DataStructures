@@ -6,3 +6,4 @@ UNION FIND DS (THEORY):
 
 UNION FIND DS (PROBLEMS):
 -------------http://codeforces.com/contest/755/problem/C
+-------------http://codeforces.com/problemset/problem/722/C
