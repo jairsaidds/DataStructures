@@ -5,5 +5,9 @@ UNION FIND DS (THEORY):
 -------------https://www.youtube.com/watch?v=ID00PMy0-vE
 
 UNION FIND DS (PROBLEMS):
--------------http://codeforces.com/contest/755/problem/C
--------------http://codeforces.com/problemset/problem/722/C
+1)-------------http://codeforces.com/contest/755/problem/C
+2)-------------http://codeforces.com/problemset/problem/722/C
+3)-------------http://codeforces.com/problemset/problem/356/A 
+4)-------------http://codeforces.com/problemset/problem/566/D
+
+Observaciones: La técnica empleada en el problema 4, de mantener segmentos y dar brincos rápidos con ayuda del UFDS no puede ser aplicada en el problema 3, ya que en el 3, se tiene que dar el salto de manera directa al primer elemento que aún no haya sido destruido, de usar la técnica del problema 4, se tocarian elementos ya destruidos y se actualizaría la respuesta de manera errónea.
