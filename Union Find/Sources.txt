@@ -9,5 +9,15 @@ UNION FIND DS (PROBLEMS):
 2)-------------http://codeforces.com/problemset/problem/722/C
 3)-------------http://codeforces.com/problemset/problem/356/A
 4)-------------http://codeforces.com/problemset/problem/566/D
+5)-------------http://codeforces.com/problemset/problem/277/A
 
-Observaciones: La técnica empleada en el problema 4, de mantener segmentos y dar brincos rápidos con ayuda del UFDS no puede ser aplicada en el problema 3, ya que en el 3, se tiene que dar el salto de manera directa al primer elemento que aún no haya sido destruido, de usar la técnica del problema 4, se tocarian elementos ya destruidos y se actualizaría la respuesta de manera errónea.
+Observaciones: 
+Problema 1: Problema directo, práctica la implementación.
+
+Problema 2: Claro ejemplo, de que a veces hay que ver el problema de fin a inicio, la idea es ir propagando desde la ultima query, pues para esa si sabemos la respuesta = 0, y de ahi, usar un UFDS, para que para las siguientes respuestas, es decir las anteriores, también vayamos obteniendo en el resultado.
+
+Problema 3: Mantener un UFDS, pues nos ayudara a saber qué SEGMENTOS están destruidos y através de eso, navegar de manera rápida para poder saber quién destruyó a quien.
+
+Problema 4: La técnica empleada en el problema 4, de mantener segmentos y dar brincos rápidos con ayuda del UFDS no puede ser aplicada en el problema 3, ya que en el 3, se tiene que dar el salto de manera directa al primer elemento que aún no haya sido destruido, de usar la técnica del problema 4, se tocarian elementos ya destruidos y se actualizaría la respuesta de manera errónea.
+
+Problema 5: Mantener elementos unidos si comparten al menos un elemento, la respuesta sera el (#componentes conexas en la gráfica) - 1. Validar el caso tricky en el que todos los elementos no sepan ningún lenguaje en ese caso la respuesta sera (#componentes conexas = N).
