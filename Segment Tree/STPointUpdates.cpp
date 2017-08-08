@@ -36,7 +36,6 @@ void update(int p, int l, int r, int idx, int v){
 	}
 }
 void updateRange(int p, int l, int r, int i, int j, int v){
-	cout << "Visito" << endl;
 	if(r < i or j < l)
 		return;	
 	if(r == l){

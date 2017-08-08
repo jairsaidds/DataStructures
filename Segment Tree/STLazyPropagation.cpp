@@ -69,4 +69,4 @@ int main(){
 		}
 	}
 	return 0;
-/bin/bash: s: command not found
+}
