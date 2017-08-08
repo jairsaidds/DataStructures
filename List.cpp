@@ -37,15 +37,14 @@ struct List{
 			head = head -> next;
 			delete c;
 		}else{
+			c = c -> next;
 			while(c != NULL){
-				if(c -> data != f){
-					p = c;
-					c = c -> next;
-				}else{
+				if(c -> data == f){
 					p -> next = c -> next;
 					delete c;
-					break;
 				}
+				p = c;
+				c = c -> next;
 			}
 		}
 	}
@@ -57,14 +56,13 @@ struct List{
 			delete c;
 		}else{
 			while(c != NULL){
-				if(c  != f){
-					p = c;
-					c = c -> next;
-				}else{
+				if(c == f){			
 					p -> next = c -> next;
 					delete c;
 					break;
 				}
+				p = c;
+				c = c -> next;
 			}
 		}
 	}
@@ -215,7 +213,7 @@ int main(){
 	node *a = new node(1);
 	node *b = new node(7);
 	node *c = new node(5);
-	node *d = new node(4);
+	node *d = new	 node(4);
 	node *e = new node(1);
 	node *f = new node(5);
 	
@@ -226,6 +224,10 @@ int main(){
 	mylist.insertNode(a);
 	mylist.insertNode(b);
 	mylist.insertNode(c);
+	mylist.deleteNode(1);
+	mylist.printList();
+	mylist.deleteGivenNode(c);
+	mylist.printList();
 	//cout << getLength(mylist) << endl;
 	mylist.insertNode(d);
 	mylist.insertNode(e);
